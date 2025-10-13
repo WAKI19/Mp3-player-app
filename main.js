@@ -1,3 +1,27 @@
+//プレーヤー
+function openFullPlayer() {
+  const fullPlayer = document.getElementById("full-player");
+  const miniPlayer = document.getElementById("mini-player");
+
+  fullPlayer.classList.remove("hidden");
+  fullPlayer.classList.add("active");
+
+  // ミニプレーヤーは隠す
+  miniPlayer.classList.add("hidden");
+}
+
+function closeFullPlayer() {
+  const fullPlayer = document.getElementById("full-player");
+  const miniPlayer = document.getElementById("mini-player");
+
+  fullPlayer.classList.remove("active");
+  fullPlayer.classList.add("hidden");
+
+  // ミニプレーヤーを表示
+  miniPlayer.classList.remove("hidden");
+}
+
+// タブ切り替えシステム
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab-button");
   const contents = document.querySelectorAll(".tab-content");

@@ -139,7 +139,7 @@
     </section>
 
     <!-- ミニプレーヤー -->
-    <div id="mini-player">
+    <div id="mini-player" onclick="openFullPlayer()">
         <i class="icon fa-solid fa-music" style="color: var(--active-color);"></i>
         <div>
             <p class="song-title" style="color: var(--active-color);">ラヴなのっ♡</p>
@@ -150,13 +150,13 @@
 
     <!-- フルプレーヤー -->
     <div id="full-player">
-        <button class="close-btn"><i class="fa-solid fa-chevron-down"></i></button>
+        <button class="close-btn" onclick="closeFullPlayer()"><i class="fa-solid fa-chevron-down"></i></button>
         <div class="full-player-content">
             <div class="music-img">♬</div>
-            <h3 class="music-title">ハピラブルー！</h3>
+            <h3 class="music-title">ラヴなのっ♡</h3>
             <div class="progress-container">
                 <input type="range" class="progress-bar" min="0" max="100" value="0">
-                <span class="song-length">3:14</span>
+                <span class="song-length">2:58</span>
             </div>
             <div class="controlls">
                 <button class="prev-btn fa-solid fa-backward"></button>
