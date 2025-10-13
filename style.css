@@ -188,15 +188,45 @@ header {
 
 /* プレイリスト詳細画面 */
 #playlist-detail {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    padding-bottom: 300px;
     background-color: var(--bg-color2);
-    z-index: 30;
     overflow: scroll;
+    transform: translateX(100%);
+}
+
+#playlist-detail.hidden {
+    transform: translateX(100%);
+    animation: slideOutX 0.3s ease;
+}
+
+#playlist-detail.active {
+    transform: translateX(0);
+    animation: slideInX 0.3s ease;
+}
+
+@keyframes slideInX {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutX {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
 }
 
 #playlist-detail .close-btn {

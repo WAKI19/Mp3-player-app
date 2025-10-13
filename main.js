@@ -21,6 +21,21 @@ function closeFullPlayer() {
   miniPlayer.classList.remove("hidden");
 }
 
+//プレイリスト詳細
+function openPlaylist() {
+  const playlistDetail = document.getElementById("playlist-detail");
+
+  playlistDetail.classList.remove("hidden");
+  playlistDetail.classList.add("active");
+}
+
+function closePlaylist() {
+  const playlistDetail = document.getElementById("playlist-detail");
+
+  playlistDetail.classList.remove("active");
+  playlistDetail.classList.add("hidden");
+}
+
 // タブ切り替えシステム
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".tab-button");
