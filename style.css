@@ -196,37 +196,15 @@ header {
     padding-bottom: 300px;
     background-color: var(--bg-color2);
     overflow: scroll;
-    transform: translateX(100%);
+    transition: 0.3s ease;
 }
 
 #playlist-detail.hidden {
     transform: translateX(100%);
-    animation: slideOutX 0.3s ease;
 }
 
 #playlist-detail.active {
     transform: translateX(0);
-    animation: slideInX 0.3s ease;
-}
-
-@keyframes slideInX {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOutX {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(100%);
-    }
 }
 
 #playlist-detail .close-btn {

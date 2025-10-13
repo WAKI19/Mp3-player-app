@@ -1,3 +1,8 @@
+//要素取得
+const playlistList = document.getElementById("playlist-list");
+const playlistDetail = document.getElementById("playlist-detail");
+const playlistDetailCloseBtn = document.getElementById("playlist-detail-close-btn");
+
 //プレーヤー
 function openFullPlayer() {
   const fullPlayer = document.getElementById("full-player");
@@ -35,6 +40,19 @@ function closePlaylist() {
   playlistDetail.classList.remove("active");
   playlistDetail.classList.add("hidden");
 }
+
+//プレイリストページ
+playlistList.addEventListener('click', (e) => {
+  const li = e.target.closest('li');
+  if (li && playlistList.contains(li)) {
+    openPlaylist();
+  }
+});
+
+playlistDetailCloseBtn.addEventListener('click', () => {
+  closePlaylist();
+  playlistDetail.classList.add("no-animation");
+});
 
 // タブ切り替えシステム
 document.addEventListener("DOMContentLoaded", () => {
