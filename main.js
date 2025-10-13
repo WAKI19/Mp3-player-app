@@ -1,4 +1,6 @@
 //要素取得
+const newPlaylistModalOpenBtn = document.getElementById("new-playlist-modal-open-btn");
+const newPlaylistModalCloseBtn = document.getElementById("new-playlist-modal-close-btn");
 const playlistList = document.getElementById("playlist-list");
 const playlistDetail = document.getElementById("playlist-detail");
 const playlistDetailCloseBtn = document.getElementById("playlist-detail-close-btn");
@@ -26,7 +28,22 @@ function closeFullPlayer() {
   miniPlayer.classList.remove("hidden");
 }
 
-//プレイリスト詳細
+//新規プレイリストモーダルを開く関数
+function openNewPlaylistModal() {
+  const newPlaylistModal = document.getElementById("new-playlist-modal");
+
+  newPlaylistModal.classList.remove("hidden");
+  newPlaylistModal.classList.add("active");
+}
+
+function closeNewPlaylistModal() {
+  const newPlaylistModal = document.getElementById("new-playlist-modal");
+
+  newPlaylistModal.classList.remove("active");
+  newPlaylistModal.classList.add("hidden");
+}
+
+//プレイリスト詳細画面を開く関数
 function openPlaylist() {
   const playlistDetail = document.getElementById("playlist-detail");
 
@@ -42,6 +59,14 @@ function closePlaylist() {
 }
 
 //プレイリストページ
+newPlaylistModalOpenBtn.addEventListener('click', () => {
+  openNewPlaylistModal();
+});
+
+newPlaylistModalCloseBtn.addEventListener('click', () => {
+  closeNewPlaylistModal();
+});
+
 playlistList.addEventListener('click', (e) => {
   const li = e.target.closest('li');
   if (li && playlistList.contains(li)) {

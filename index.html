@@ -46,7 +46,7 @@
     <section id="playlist" class="tab-content">
         <header>
             <h2>プレイリスト</h2>
-            <button class="header-btn fa-solid fa-plus"></button>
+            <button id="new-playlist-modal-open-btn" class="header-btn fa-solid fa-plus"></button>
         </header>
         <ul id="playlist-list" class="playlist-list">
             <li>
@@ -114,9 +114,9 @@
         </div>
 
         <!-- プレイリスト作成モーダル -->
-        <div class="modal" id="newPlaylistModal">
+        <div id="new-playlist-modal" class="hidden">
             <div class="modal-content">
-                <i class="close-btn fa-solid fa-xmark"></i>
+                <button id="new-playlist-modal-close-btn" class="close-btn fa-solid fa-xmark"></button>
                 <h3>新規プレイリスト</h3>
                 <input type="text" autocomplete="off" placeholder="プレイリスト名を入力..." />
                 <button class="create-btn" id="createPlaylistBtn">作成する</button>

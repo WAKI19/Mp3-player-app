@@ -41,16 +41,12 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: var(--bg-color2);
-    color: var(--text-color);
     padding: 10px 17px;
 }
 
 .header-btn {
     font-size: 20px;
-    background-color: transparent;
     color: var(--text-color);
-    border: none;
-    outline: none;
 }
 
 .header-btn:active {
@@ -127,8 +123,8 @@ header {
     font-size: 13px;
 }
 
-.modal {
-    display: none;
+/* プレイリスト作成モーダル */
+#new-playlist-modal {
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -138,9 +134,18 @@ header {
     background: rgba(0,0,0,0.8);
     align-items: center;
     justify-content: center;
+    transition: 1s;
 }
 
-.modal-content {
+#new-playlist-modal.hidden {
+    display: none;
+}
+
+#new-playlist-modal.active {
+    display: inline-block;
+}
+
+#new-playlist-modal .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -153,14 +158,15 @@ header {
     text-align: center;
 }
 
-.modal .close-btn {
+#new-playlist-modal .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-size: 16px;
     color: var(--text-color2);
 }
 
-.modal-content input {
+#new-playlist-modal input {
     display: inline-block;
     width: 100%;
     font-size: 16px;
@@ -174,11 +180,11 @@ header {
     box-sizing: border-box;
 }
 
-.modal-content input:focus {
+#new-playlist-modal input:focus {
     outline: none;
 }
 
-.modal .create-btn {
+#new-playlist-modal .create-btn {
     font-size: 14px;
     padding: 6px 15px;
     background: var(--main-color);
@@ -305,7 +311,7 @@ header {
     background-color: var(--bg-color2);
     border: 0.5px solid var(--active-color);
     border-radius: 10px;
-    box-shadow: 0 0 6px var(--active-color);
+    box-shadow: 0 0 30px black;
     transition: 0.3s ease;
     z-index: 10;
 }
@@ -460,10 +466,10 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-top: 0.1px solid var(--text-color2);
     background: var(--bg-color2);
     color: var(--text-color2);
     height: 55px;
+    z-index: 20;
 }
 
 .tab-button {
