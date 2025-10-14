@@ -15,7 +15,10 @@
             <button class="header-btn fa-solid fa-file-import"></button>
         </header>
 
-        <input type="text" class="search-input" placeholder="検索：" spellcheck="false">
+        <div class="search-box">
+            <input type="text" id="all-songs-search-input" placeholder="検索：" autocomplete="off">
+            <button id="all-songs-search-clear-btn" class="clear-btn" type="button">×</button>
+        </div>
 
         <ul class="song-list">
           <li>

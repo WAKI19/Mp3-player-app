@@ -54,24 +54,45 @@ header {
 }
 
 /* 曲一覧ページ */
-#all-songs .search-input {
-    border: 1px solid var(--bg-color2);
-    background-color: var(--bg-color2);
-    color: var(--text-color);
-    font-size: 15px;
-    padding: 3px 10px;
-    border-radius: 5px;
+#all-songs .search-box {
+    position: relative;
+    display: inline-block;
     margin-top: 15px;
     margin-left: 10px;
+}
+
+#all-songs .search-box input {
+    font-size: 15px;
+    padding: 3px 2em 3px 8px;
+    color: var(--text-color);
+    background-color: var(--bg-color2);
+    border: 1px solid var(--bg-color2);
+    border-radius: 5px;
     caret-color: var(--main-color);
 }
 
-#all-songs .search-input::placeholder {
-    color: gray;
+#all-songs .search-box input::placeholder {
+    color: var(--text-color2);
 }
 
-#all-songs .search-input:focus {
+#all-songs .search-box input:focus {
     outline: none;
+}
+
+#all-songs .search-box .clear-btn {
+  position: absolute;
+  right: 0.3em;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: var(--text-color2);
+}
+
+#all-songs .search-box .clear-btn:active {
+    opacity: 0.5;
 }
 
 #all-songs .song-list {

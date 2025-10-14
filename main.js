@@ -14,6 +14,10 @@ function hide(elem) {
 document.addEventListener("DOMContentLoaded", () => {
 
   //要素取得
+    //全曲ページ
+  const allSongsSearchInput = document.getElementById('all-songs-search-input');
+  const allSongsSearchClearBtn = document.getElementById("all-songs-search-clear-btn");
+
     //プレイリストページ
   const newPlaylistModalOpenBtn = document.getElementById("new-playlist-modal-open-btn");
   const newPlaylistModalCloseBtn = document.getElementById("new-playlist-modal-close-btn");
@@ -32,6 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   //イベント
+    //全曲ページ
+  allSongsSearchInput.addEventListener('input', () => {
+    if (allSongsSearchInput.value.trim() !== '') {
+      allSongsSearchClearBtn.style.display = 'block';
+    } else {
+      allSongsSearchClearBtn.style.display = 'none';
+    }
+  });
+
+  allSongsSearchClearBtn.addEventListener('click', () => {
+    allSongsSearchInput.value = '';
+    allSongsSearchInput.focus();
+    allSongsSearchClearBtn.style.display = 'none';
+  });
+
     //プレイリストページ
   newPlaylistModalOpenBtn.addEventListener('click', () => {
     active(newPlaylistModal);
