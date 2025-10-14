@@ -69,7 +69,7 @@
 
         <!-- プレイリスト詳細画面 -->
         <div id="playlist-detail" class="hidden">
-            <button id="playlist-detail-close-btn" class="close-btn fa-solid fa-angle-left" onclick="closePlaylist()"></button>
+            <button id="playlist-detail-close-btn" class="close-btn fa-solid fa-angle-left"></button>
             <div class="playlist-img"></div>
             <h3 class="playlist-title">とき宣</h3>
             <p class="playlist-length">18曲、 1時間2分</p>
@@ -139,18 +139,18 @@
     </section>
 
     <!-- ミニプレーヤー -->
-    <div id="mini-player" onclick="openFullPlayer()">
+    <div id="mini-player">
         <i class="icon fa-solid fa-music" style="color: var(--active-color);"></i>
         <div>
             <p class="song-title" style="color: var(--active-color);">ラヴなのっ♡</p>
             <p class="song-length">2:58</p>
         </div>
-        <button class="play-btn fa-solid fa-play"></button>
+        <button id="mini-player-play-pause-btn" class="play-btn fa-solid fa-play"></button>
     </div>
 
     <!-- フルプレーヤー -->
     <div id="full-player" class="hidden">
-        <button class="close-btn" onclick="closeFullPlayer()"><i class="fa-solid fa-chevron-down"></i></button>
+        <button id="full-player-close-btn" class="close-btn"><i class="fa-solid fa-chevron-down"></i></button>
         <div class="full-player-content">
             <div class="music-img">♬</div>
             <h3 class="music-title">ラヴなのっ♡</h3>
