@@ -18,6 +18,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 button{
@@ -29,7 +30,7 @@ button{
 
 .tab-content {
     display: none;
-    overflow: scroll;
+    padding-top: 56px; /* ヘッダーの高さ分の余白 */
 }
 
 .tab-content.active {
@@ -38,10 +39,15 @@ button{
 
 /* 全ページ共通 */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 56px;
     display: flex;
     justify-content: space-between;
     background-color: var(--bg-color2);
     padding: 10px 17px;
+    z-index: 10;
 }
 
 .header-btn {
@@ -222,7 +228,7 @@ header {
     height: 100%;
     padding-bottom: 300px;
     background-color: var(--bg-color2);
-    overflow: scroll;
+    overflow-y: scroll;
     transition: 0.3s ease;
 }
 
